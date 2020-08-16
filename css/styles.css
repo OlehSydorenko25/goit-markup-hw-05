@@ -295,7 +295,15 @@ body {
   font-weight: 700;
   padding-top: 27px;
   padding-bottom: 27px;
-  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+}
+
+.work .title {
+  position: relative;
 }
 
 .work .subject {
