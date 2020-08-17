@@ -42,7 +42,6 @@ p {
   padding: 94px 15px;
   margin-left: auto;
   margin-right: auto;
-  /* outline: 1px solid teal; */
 }
 
 .no-padding {
@@ -53,6 +52,40 @@ p {
 body {
   background-color: var(--accent-white-color);
   font-family: "Roboto", sans-serif;
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop .modal .img {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.modal {
+  width: 581px;
+  height: 528px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 4px;
 }
 
 /* Навигаия сайта */
@@ -100,6 +133,10 @@ body {
 
   display: block;
   padding-top: 32px;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav a:hover,
@@ -146,6 +183,10 @@ body {
 
 .address-list a:last-child {
   margin-right: 0;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-box .addres-icon {
@@ -197,7 +238,7 @@ body {
   text-transform: uppercase;
 }
 
-.hero a {
+.hero button {
   background-color: var(--accent-color);
   color: var(--accent-white-color);
   font-size: 16px;
@@ -206,6 +247,7 @@ body {
   text-align: center;
   letter-spacing: 0.06em;
   font-style: normal;
+  border: 0px;
 
   display: inline-block;
 
@@ -383,6 +425,10 @@ body {
   height: 44px;
   border-radius: 50%;
   padding: 12px;
+
+  transition-property: background-color, fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team .container .subject {
@@ -456,6 +502,10 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .connect .connect-box .item {
@@ -509,6 +559,10 @@ address .maps {
   border-radius: 4px;
   border: 0;
   padding: 6px 22px;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .press button:hover,
@@ -534,12 +588,32 @@ address .maps {
   letter-spacing: 0.03em;
 }
 
+.portfolio .item .img {
+  position: relative;
+}
+
 .portfolio .info {
   color: var(--accent-white-color);
   background-color: rgba(33, 150, 243, 0.9);
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
+  padding: 63px 24px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 100%;
+  opacity: 1;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio .item:hover .info,
+.portfolio .item:focus .info {
+  transform: translateY(-305px);
 }
 
 .portfolio > .item:hover {
@@ -549,6 +623,10 @@ address .maps {
 
 .portfolio > .item {
   outline: 1px solid var(--background-pinc-color);
+}
+
+.portfolio .item .img {
+  overflow: hidden;
 }
 
 .filter .press {
@@ -597,6 +675,10 @@ address .maps {
   align-items: center;
   border-radius: 4px;
   fill: var(--primary-text-color);
+
+  transition-property: fill, border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,

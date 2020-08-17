@@ -16,6 +16,15 @@
     <!-- Шапка сайта -->
 
     <header>
+      <!-- Модалка -->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <div class="img">
+            <img src="./images/close.svg" alt="" data-modal-close />
+          </div>
+        </div>
+      </div>
+      <!-- Модалка -->
       <div class="container no-padding nav-box">
         <a href="./" class="logo">
           <div class="web">Web</div>
@@ -61,7 +70,7 @@
           Эффективные решения<br />
           для вашего бизнеса
         </h1>
-        <a href="">Заказать услугу</a>
+        <button data-modal-open>Закказать услугу</button>
       </section>
 
       <!-- Преимущества -->
@@ -439,5 +448,19 @@
         </div>
       </div>
     </footer>
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector("[data-modal-open]"),
+        closeModalBtn: document.querySelector("[data-modal-close]"),
+        modal: document.querySelector("[data-modal]"),
+      };
+
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+
+      function toggleModal() {
+        refs.modal.classList.toggle("is-hidden");
+      }
+    </script>
   </body>
 </html>
